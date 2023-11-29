@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+/* Container nav */
+
+.containerNav{
+    background-color: #111133;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px solid #ff99cc;
+    border-radius: 8px; 
+    margin-left: 2px;
+    height: 85px;
+}
+/* Logo */
+.logo{
+    padding-top: 3px;
+    height: 40px;
+}
+/* Title */
+.title {
+    font-size: calc(2.86rem - 2.7vh);
+    color: #e46eaa; /* Neon pink/purple color */
+    text-shadow: 0 0 8px rgba(228, 110, 170, 0.8);
+    margin-left:15px;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 
+    -1px -1px 0 black,   /* Sombra superior izquierda */
+     1px -1px 0 black,   /* Sombra superior derecha */
+    -1px  1px 0 black,   /* Sombra inferior izquierda */
+     1px  1px 0 black;   /* Sombra inferior derecha */
+  }
+/* User */
+.user{
+display: flex;
+align-items: center;
+margin-top: 4px;
+background-color: #42383f;
+padding-left: 8px;
+padding-right: 8px;
+border-radius: 50px;
+height: 52px;
+}
+.user img{
+width: 42px;
+height: 42px;
+margin-left: 10px;
+border-radius: 50px;
+}
+.user img:hover{
+opacity:0.8;
+}
+
+.user:hover{
+cursor: pointer;
+}
+
+.user p{
+color: #ffff;
+font-size: 14px;
+}
+
+.navLink {
+margin-left: 10px;
+margin-top: 8px;
+font-weight: bold;
+color: #ffffff;
+text-decoration: none;
+font-size: 16px;
+padding: 8px;
+border-radius: 5px;
+background-color: #8e6db0;
+display: flex;
+align-items: center;
+transition: background-color 0.3s ease;
+}
+
+.containerNav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+.listItem{
+    justify-content: center;
+    line-height: 60px;
+    margin: 0 5px;
+}
+
+.containerNav ul li a{
+    color: #945bce;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+.navLabel{
+    cursor: pointer;
+}
+
+li a.active, li a:hover{
+    background: #773580;
+    transition: .5s;
+    .navLabel{
+        color: #e4d6d6;
+    }
+}
+
+.checkbtn{
+    font-size: 30px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 40px;
+    cursor: pointer;
+    width: 40px;
+    display: none;
+}
+.menu{
+    position: fixed;
+    width: 100%;
+    height: 100vh; 
+    top: 80px;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 5;
+    font-size: 40px;
+    left: -100%;
+ }
+ .open{
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 100vh; 
+    background: #68b0bd;
+    top: 80px;
+    text-align: center;
+    transition: all 0.5s;
+    left:0;
+ }
+ .navIcons{
+    display: flex;
+    margin: 0;
+ }
+ .icon{
+    width: 30px;
+    margin: 0%;
+  }
+
+@media (max-width: 952px){
+    .link{
+        padding-left: 20px;
+    }
+    .containerNav ul li Link{
+        font-size: 16px;
+    }
+
+}
+/* MOBILE */
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    .navIcons{
+        display: none;
+    }
+    .containerNav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .containerNav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        color: rgb(226, 195, 19); 
+    }
+    /* HOla hola hola como estamos??? */
+}
