@@ -3,6 +3,6 @@ const router = Router();
 
 const coursesRoute = require("./coursesRoute");
 
-router.use("courses", coursesRoute);
+router.use("/courses", coursesRoute);
 
 module.exports = router;
