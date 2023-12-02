@@ -2,7 +2,11 @@ const { Router } = require("express");
 const router = Router();
 
 const coursesRoute = require("./coursesRoute");
+const questionsRoute = require("./questionsRoute");
+const proceduresRoute = require("./coursesRoute");
 
 router.use("/courses", coursesRoute);
+router.use("/questions", questionsRoute);
+router.use("/procedures", proceduresRoute);
 
 module.exports = router;
