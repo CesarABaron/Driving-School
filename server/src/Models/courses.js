@@ -20,11 +20,27 @@ module.exports = (sequelize) =>{
             type: DataTypes.INTEGER,
             allowNull:false
         },
-        blackFriday:{
-            type: DataTypes.BOOLEAN,
-            allowNull:false,
-            defaultValue:false
+        includes:{
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull:false
+        },
+        requirements:{
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull:false
+        },
+        payment:{
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull:false
+        },
+        theoricSchedule:{
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull:false
+        },
+        practiceSchedule:{
+            type: DataTypes.STRING,
+            allowNull:false
         }
+        
     },
     { timestamps: false })
 }
