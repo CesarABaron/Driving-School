@@ -20,11 +20,6 @@ module.exports = (sequelize) =>{
             type: DataTypes.INTEGER,
             allowNull:false
         },
-        blackFriday:{
-            type: DataTypes.BOOLEAN,
-            allowNull:false,
-            defaultValue:false
-        }
     },
     { timestamps: false })
 }

@@ -2,6 +2,10 @@
 const { createCoursesController } = require("../Controllers/Courses/createCoursesController")
 const { getAllCoursesController } = require("../Controllers/Courses/getAllCoursesController")
 const { updateCoursesController } = require("../Controllers/Courses/updateCoursesController")
+const { deleteCourseController } = require("../Controllers/Courses/deleteCourseController")
+const { getCourseByIdController } = require("../Controllers/Courses/getCourseByIdController")
+
+
 
 
 const createCourseHandler = async (req, res) =>{
@@ -19,14 +23,25 @@ const getAllCoursesHandler = async (req, res) =>{
         const courses = await getAllCoursesController()
         if(courses) return res.status(200).json(courses)
         return res.status(400).json({error: "There is no courses."})
+        
     } catch (error) {
         res.status(500).json({error: error.message})
     }
 }
 
+const getCourseByIdHandler = async (req, res) =>{
+    try {
+        const course = await getCourseByIdController(req.params.id)
+        if(course) return res.status(200).json(course)
+        return res.status(400).json({error:"The course couldn't be found"})
+    } catch (error) {
+        res.status(500).json({error:error.message})
+    }
+}
+
 const updateCoursesHandler = async (req, res) =>{
     try {
-        const courses = await updateCoursesController(req.body, req.params)
+        const courses = await updateCoursesController(req.body, req.params.id)
         if(courses) return res.status(200).json(courses)
         return res.status(400).json({error:"Couldn't update the course."})
     } catch (error) {
@@ -34,8 +49,20 @@ const updateCoursesHandler = async (req, res) =>{
     }
 }
 
+const deleteCourseHandler = async (req, res) =>{
+    try {
+        deletedCourse = await deleteCourseController(req.params.id)
+        if(deletedCourse) return res.status(200).json({message: "The game has been removed"})
+        return res.status(400).json({error:"The game doesn't exist"})
+    } catch (error) {
+        return res.status(500).json({error:error.message})
+    }
+}
+
 module.exports={
     createCourseHandler,
     getAllCoursesHandler,
-    updateCoursesHandler
+    getCourseByIdHandler,
+    updateCoursesHandler,
+    deleteCourseHandler
 }
