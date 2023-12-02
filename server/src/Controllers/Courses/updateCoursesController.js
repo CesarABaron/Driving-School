@@ -1,15 +1,13 @@
 const {courses} =require("../../db")
 
-const updateCoursesController = async (body, params) =>{
-    const id = params
-    const {courseName} = body
-    const updated = await courses.update({
-        body
-    })
+const updateCoursesController = async (body, id) =>{
+    const updated = await courses.update(body,
+        {where: {id:id}}
+    )
 
     if(updated){
-        const updatedCourse = await courses.findAll({
-            where:{courseName}
+        const updatedCourse = await courses.findOne({
+            where:{id}
         })
         return updatedCourse
     }return false

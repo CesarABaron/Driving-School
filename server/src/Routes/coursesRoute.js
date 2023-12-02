@@ -3,8 +3,8 @@ const { createCourseHandler, getAllCoursesHandler, updateCoursesHandler } = requ
 const router = Router();
 
 /* router.get("/", getAllProductsHandler) */
+router.patch("/:id",updateCoursesHandler)
 router.post("/",createCourseHandler)
 router.get("/",getAllCoursesHandler)
-router.patch("/:",updateCoursesHandler)
 
 module.exports = router;

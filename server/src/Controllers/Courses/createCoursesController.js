@@ -7,7 +7,7 @@ const createCoursesController = async (body) =>{
         where: {courseName},
         defaults: {...body}
     })
-    if(created) return newCourse
+    if(created) return newCourse.dataValues
     return false
 }
 
