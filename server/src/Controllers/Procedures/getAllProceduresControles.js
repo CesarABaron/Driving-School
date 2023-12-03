@@ -1,8 +1,8 @@
 const { procedure } = require("../../db");
 
 const getAllProceduresController = async () => {
-  const allProcedure = await procedure.findAll();
-  if (allProcedure.length > 0) return allProcedure;
+  const allProcedures = await procedure.findAll();
+  if (allProcedures.length > 0) return allProcedures;
   return false;
 };
 

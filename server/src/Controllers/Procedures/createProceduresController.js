@@ -1,10 +1,9 @@
-const { procedure } = require("../../db");
+const { procedures } = require("../../db");
 
-const createProcedureController = async (body) => {
-  console.log(body);
-  const { procedureName } = body;
-  const [newProcedure, created] = await procedure.findOrCreate({
-    where: { procedureName },
+const createProceduresController = async (body) => {
+  const { basado } = body;
+  const [newProcedure, created] = await procedures.findOrCreate({
+    where: { basado },
     defaults: { ...body },
   });
   if (created) return newProcedure.dataValues;
@@ -12,5 +11,5 @@ const createProcedureController = async (body) => {
 };
 
 module.exports = {
-  createProcedureController,
+  createProceduresController,
 };

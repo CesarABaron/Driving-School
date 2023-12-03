@@ -3,7 +3,7 @@ const router = Router();
 
 const coursesRoute = require("./coursesRoute");
 const questionsRoute = require("./questionsRoute");
-const proceduresRoute = require("./coursesRoute");
+const proceduresRoute = require("./proceduresRoute");
 
 router.use("/courses", coursesRoute);
 router.use("/questions", questionsRoute);
