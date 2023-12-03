@@ -8,9 +8,9 @@ const { getProcedureByIdController } = require("../Controllers/Procedures/getPro
 
 const createProcedureHandler = async (req, res) =>{
     try {
-        const newCourse = await createProceduresController(req.body)
-        if(newCourse) return res.status(200).json(newCourse)
-        return res.status(400).json({error: "Course with the same name already exists."})
+        const newProcedure = await createProceduresController(req.body)
+        if(newProcedure) return res.status(200).json(newProcedure)
+        return res.status(400).json({error: "Procedure with the same name already exists."})
     } catch (error) {
         res.status(500).json({error: error.message})
     }
@@ -18,9 +18,9 @@ const createProcedureHandler = async (req, res) =>{
 
 const getAllProceduresHandler = async (req, res) =>{
     try {
-        const courses = await getAllProceduresController()
-        if(courses) return res.status(200).json(courses)
-        return res.status(400).json({error: "There is no courses."})
+        const procedure = await getAllProceduresController()
+        if(procedure) return res.status(200).json(procedure)
+        return res.status(400).json({error: "There is no procedures."})
         
     } catch (error) {
         res.status(500).json({error: error.message})
@@ -29,9 +29,9 @@ const getAllProceduresHandler = async (req, res) =>{
 
 const getProcedureByIdHandler = async (req, res) =>{
     try {
-        const course = await getProcedureByIdController(req.params.id)
-        if(course) return res.status(200).json(course)
-        return res.status(400).json({error:"The course couldn't be found"})
+        const procedure = await getProcedureByIdController(req.params.id)
+        if(procedure) return res.status(200).json(procedure)
+        return res.status(400).json({error:"The procedure couldn't be found"})
     } catch (error) {
         res.status(500).json({error:error.message})
     }
@@ -39,9 +39,9 @@ const getProcedureByIdHandler = async (req, res) =>{
 
 const updateProceduresHandler = async (req, res) =>{
     try {
-        const courses = await updateProceduresController(req.body, req.params.id)
-        if(courses) return res.status(200).json(courses)
-        return res.status(400).json({error:"Couldn't update the course."})
+        const procedure = await updateProceduresController(req.body, req.params.id)
+        if(procedure) return res.status(200).json(procedure)
+        return res.status(400).json({error:"Couldn't update the procedure."})
     } catch (error) {
         res.status(500).json({error:error.message})
     }
@@ -49,9 +49,9 @@ const updateProceduresHandler = async (req, res) =>{
 
 const deleteProcedureHandler = async (req, res) =>{
     try {
-        deletedCourse = await deleteProcedureController(req.params.id)
-        if(deletedCourse) return res.status(200).json({message: "The course has been removed"})
-        return res.status(400).json({error:"The course doesn't exist"})
+        deletedProcedure = await deleteProcedureController(req.params.id)
+        if(deletedProcedure) return res.status(200).json({message: "The procedure has been removed"})
+        return res.status(400).json({error:"The procedure doesn't exist"})
     } catch (error) {
         return res.status(500).json({error:error.message})
     }

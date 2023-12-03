@@ -1,7 +1,7 @@
-const {procedure} = require("../../db")
+const {procedures} = require("../../db")
 
-const getCourseByIdController = async (id) =>{
-    const foundProcedure = await procedure.findOne({
+const getProcedureByIdController = async (id) =>{
+    const foundProcedure = await procedures.findOne({
         where: {id}
     })
     if(foundProcedure) return foundProcedure
@@ -9,5 +9,5 @@ const getCourseByIdController = async (id) =>{
 }
 
 module.exports = {
-    getCourseByIdController
+    getProcedureByIdController
 }
