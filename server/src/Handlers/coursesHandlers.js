@@ -6,8 +6,6 @@ const { deleteCourseController } = require("../Controllers/Courses/deleteCourseC
 const { getCourseByIdController } = require("../Controllers/Courses/getCourseByIdController")
 
 
-
-
 const createCourseHandler = async (req, res) =>{
     try {
         const newCourse = await createCoursesController(req.body)
@@ -52,8 +50,8 @@ const updateCoursesHandler = async (req, res) =>{
 const deleteCourseHandler = async (req, res) =>{
     try {
         deletedCourse = await deleteCourseController(req.params.id)
-        if(deletedCourse) return res.status(200).json({message: "The game has been removed"})
-        return res.status(400).json({error:"The game doesn't exist"})
+        if(deletedCourse) return res.status(200).json({message: "The course has been removed"})
+        return res.status(400).json({error:"The course doesn't exist"})
     } catch (error) {
         return res.status(500).json({error:error.message})
     }
