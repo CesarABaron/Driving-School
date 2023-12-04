@@ -1,37 +1,144 @@
-import React, { useState } from 'react'
-import style from "./NavBar.module.css"
-import {Link} from "react-router-dom"
+import React, { useState } from 'react';
+import style from './NavBar.module.css';
+import { Link as RouterLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.min.js"
+
 const NavBar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
 
-    const [openMenu, setOpenMenu] = useState(false)
+  const toggleMenu = () =>{
+    setOpenMenu(!openMenu)
+  }
+
   return (
-    <nav className={style.containerNav}>
-        <label for="check">
-        <img onClick={()=>setOpenMenu(!openMenu)} src="https://cdn.discordapp.com/attachments/781222020770693152/1163340795387052072/image.png?ex=653f388b&is=652cc38b&hm=74b20567a50829083df339104ae5d8d1b93b416c6906f00f6b3fbd26b8b979b5&" className={style.checkbtn}/>
-        </label>
-      <a className={style.link}>
-        <img src={"img"} alt="logo-img" className={style.logo}/>
-        <label className={style.title}>Videogames</label>
-      </a>
-      <ul className={style.navIcons}>
-        <li onClick={()=>setOpenMenu(false)} className={style.listItem}><Link to="/chechecrack"><label className={style.navLabel}>Home</label></Link></li>
-        <li onClick={()=>setOpenMenu(false)} className={style.listItem}><Link to="/home"><label className={style.navLabel}>Home</label></Link></li>
-        <li onClick={()=>setOpenMenu(false)} className={style.listItem}><Link to="/form"><label className={style.navLabel}>Create</label></Link></li>
-        <li onClick={()=>setOpenMenu(false)} className={style.listItem}><Link to="/favs"><label className={style.navLabel}>Favorites</label></Link></li>
-        <li className={style.user}>
-          <p>user.userName</p>
-          <img src={"pic"} alt="prof-pic" onError={()=>noPicture()} onClick={()=>newProfilePicuture()}/>
-        </li>
-        <li ><Link className={style.navLink} to="/login"><img className={style.icon} alt="home-icon" src="https://cdn.discordapp.com/attachments/781222020770693152/1138335731643850863/image.png"></img></Link></li>
-      </ul>
-      <ul className={ openMenu ? style.open : style.menu}>
-        <li onClick={()=>setOpenMenu(false)} className={style.listItem}><Link to="/home">Home</Link></li>
-        <li onClick={()=>setOpenMenu(false)} className={style.listItem}><Link to="/form">Create</Link></li>
-        <li onClick={()=>setOpenMenu(false)} className={style.listItem}><Link to="/favs">Favorites</Link></li>
-        <li  className={style.listItem}><Link to="/login">Log Out</Link></li>
-      </ul>
+    <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">
+          Poblado
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded={openMenu}
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <ScrollLink
+              style={{cursor:"pointer"}}
+              className="nav-link active cursor-pointer"
+              activeClass="active"
+              to="our-services"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              //BOOTSTRAP
+              aria-current="page"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              >
+              Servicios
+              </ScrollLink>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              >
+                Inscripciones
+              </a>
+            </li>
+            <li className="nav-item">
+            <ScrollLink
+              style={{cursor:"pointer"}}
+              className="nav-link active cursor-pointer"
+              activeClass="active"
+              to="location"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              //BOOTSTRAP
+              aria-current="page"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              >
+              Ubicación
+              </ScrollLink>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link active dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Mas acciones
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Sobre nosotros
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Noticias
+                  </a>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <a 
+                  className="dropdown-item" 
+                  href="#"data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+              >
+                    Preguntas frecuentes
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form className="d-flex" role="search">
+            <button 
+            className="btn btn-outline-success" 
+            type="submit"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+              Contactenos
+            </button>
+          </form>
+        </div>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
