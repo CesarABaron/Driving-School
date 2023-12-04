@@ -129,8 +129,9 @@ const NavBar = () => {
                 </li>
                 <li>
                 <RouterLink
+                to="/faq"
                 className="dropdown-item" 
-                href="#"data-bs-toggle="collapse"
+                data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
