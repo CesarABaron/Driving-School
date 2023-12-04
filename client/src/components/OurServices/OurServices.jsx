@@ -3,8 +3,20 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.min.js"
 
 const OurServices = () => {
+    const handleLinkClick= () =>{
+        setTimeout(()=>{
+          alert("SADS")
+          scroll.scrollTo("#our-services", {
+            smooth: true,
+            spy:true,
+            offset: -70,
+            duration: 500
+          });
+        },1111)
+      }
   return (
     <div id="our-services">
+        <button onClick={()=>handleLinkClick()}>asd</button>
       <h3 className="shadow p-3 mb-5 bg-body-tertiary rounded d-flex justify-content-center m-4" >Nuestros servicios</h3>
         <div class="row d-flex justify-content-center m-10">
             <div className="card mx-5 my-3" style={{ width: '18rem' }}>

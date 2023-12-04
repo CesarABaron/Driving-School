@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './NavBar.module.css';
-import { Link as RouterLink } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.min.js"
 import { useLocation } from 'react-router-dom';
@@ -12,13 +12,24 @@ const NavBar = () => {
   console.log(location);
   console.log(location==="/");
 
+  const handleLinkClick= () =>{
+    setTimeout(()=>{
+      scroll.scrollTo("our-services", {
+        smooth: true,
+        spy:true,
+        offset: -70,
+        duration: 500
+      });
+    },1111)
+  }
+
   return (
     <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <RouterLink
+        <Link
         className="navbar-brand" to="/">
           Poblado
-        </RouterLink>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -54,20 +65,21 @@ const NavBar = () => {
                             >
                             Servicios
                             </ScrollLink>:
-                            <RouterLink 
-                            to="/home"
+                            <Link
+                            test="TEEEEEST"
+                            to="/"
                             style={{cursor:"pointer"}}
                             className="nav-link active cursor-pointer"
                             aria-current="page"
-                            data-bs-toggle="collapse"
+                            /* data-bs-toggle="collapse" */
                             data-bs-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent"
                             aria-expanded="false"
                             aria-label="Toggle navigation"
-                            Servicios
+                            onClick={()=>handleLinkClick()}
                             >
                               Servicios
-                            </RouterLink>
+                            </Link>
               }
             </li>
             <li className="nav-item">
@@ -113,11 +125,11 @@ const NavBar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <RouterLink
+                  <Link
                   className="dropdown-item" to="about-us"
                   >
                     Sobre nosotros
-                  </RouterLink>
+                  </Link>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
@@ -128,7 +140,7 @@ const NavBar = () => {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                <RouterLink
+                <Link
                 to="/faq"
                 className="dropdown-item" 
                 data-bs-toggle="collapse"
@@ -138,7 +150,7 @@ const NavBar = () => {
                 aria-label="Toggle navigation"
                 >
                   Preguntas frecuentes
-                </RouterLink>
+                </Link>
                 </li>
               </ul>
             </li>
