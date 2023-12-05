@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
-import style from './NavBar.module.css';
-import { Link as RouterLink } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/js/bootstrap.min.js"
-import { useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import style from "./NavBar.module.css";
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
-
-  const location = useLocation().pathname
+  const location = useLocation().pathname;
   console.log(location);
-  console.log(location==="/");
+  console.log(location === "/");
 
   return (
     <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <RouterLink
-        className="navbar-brand" to="/">
-          Poblado
-        </RouterLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -30,76 +25,83 @@ const NavBar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        <RouterLink className="navbar-brand " to="/">
+          Poblado
+        </RouterLink>
+
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              { 
-              location==="/" ?
-                            <ScrollLink
-                            style={{cursor:"pointer"}}
-                            className="nav-link active cursor-pointer"
-                            activeClass="active"
-                            to="our-services"
-                            spy={true}
-                            smooth={true}
-                            offset={-70}
-                            duration={500}
-                            //BOOTSTRAP
-                            aria-current="page"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                            >
-                            Servicios
-                            </ScrollLink>:
-                            <RouterLink 
-                            to="/home"
-                            style={{cursor:"pointer"}}
-                            className="nav-link active cursor-pointer"
-                            aria-current="page"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                            Servicios
-                            >
-                              Servicios
-                            </RouterLink>
-              }
+              {location === "/" ? (
+                <ScrollLink
+                  style={{ cursor: "pointer" }}
+                  className="nav-link active cursor-pointer"
+                  activeClass="active"
+                  to="our-services"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  //BOOTSTRAP
+                  aria-current="page"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  Servicios
+                </ScrollLink>
+              ) : (
+                <RouterLink
+                  to="/home"
+                  style={{ cursor: "pointer" }}
+                  className="nav-link active cursor-pointer"
+                  aria-current="page"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  Servicios
+                >
+                  Servicios
+                </RouterLink>
+              )}
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+              <a
+                className="nav-link active"
+                aria-current="page"
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
               >
                 Inscripciones
               </a>
             </li>
             <li className="nav-item">
-            <ScrollLink
-              style={{cursor:"pointer"}}
-              className="nav-link active cursor-pointer"
-              activeClass="active"
-              to="location"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              //BOOTSTRAP
-              aria-current="page"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+              <ScrollLink
+                style={{ cursor: "pointer" }}
+                className="nav-link active cursor-pointer"
+                activeClass="active"
+                to="location"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                //BOOTSTRAP
+                aria-current="page"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
               >
-              Ubicación
+                Ubicación
               </ScrollLink>
             </li>
             <li className="nav-item dropdown">
@@ -113,9 +115,7 @@ const NavBar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <RouterLink
-                  className="dropdown-item" to="about-us"
-                  >
+                  <RouterLink className="dropdown-item" to="about-us">
                     Sobre nosotros
                   </RouterLink>
                 </li>
@@ -128,30 +128,30 @@ const NavBar = () => {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                <RouterLink
-                to="/faq"
-                className="dropdown-item" 
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                >
-                  Preguntas frecuentes
-                </RouterLink>
+                  <RouterLink
+                    to="/faq"
+                    className="dropdown-item"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    Preguntas frecuentes
+                  </RouterLink>
                 </li>
               </ul>
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <button 
-            className="btn btn-outline-success" 
-            type="submit"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            <button
+              className="btn btn-outline-success"
+              type="submit"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
             >
               Contactenos
             </button>
