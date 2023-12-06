@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 const OurServices = () => {
   return (
     <div
-      id="our-services "
+      id="our-services"
       className="d-flex justify-content-center flex-column"
     >
       <h3 className="shadow p-3 mb-5 d-flex justify-content-center m-4 ">
