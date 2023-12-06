@@ -54,11 +54,11 @@ const NavBar = () => {
                 </ScrollLink>
               ) : (
                 <RouterLink
-                  to="/home"
+                  to="/"
                   style={{ cursor: "pointer" }}
                   className="nav-link active cursor-pointer"
                   aria-current="page"
-                  data-bs-toggle="collapse"
+                  /* data-bs-toggle="collapse" */
                   data-bs-target="#navbarSupportedContent"
                   aria-controls="navbarSupportedContent"
                   aria-expanded="false"
