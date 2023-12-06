@@ -13,5 +13,7 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 courses:action.payload
             }
+        default:
+            return { ...state };
     }
 }
