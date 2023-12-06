@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./NavBar.module.css";
-import { Link as RouterLink } from "react-router-dom";
+import { Link, Link as RouterLink } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -144,17 +144,19 @@ const NavBar = () => {
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <button
-              className="btn btn-outline-success"
-              type="submit"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              Contactenos
-            </button>
+            <Link to="https://api.whatsapp.com/send?phone=3142219525">
+              <button
+                className="btn btn-outline-success"
+                type="submit"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                Contactenos
+              </button>
+            </Link>
           </form>
         </div>
       </div>
