@@ -1,10 +1,12 @@
 import axios from "axios"
 import { GET_COURSES } from "../actionTypes"
-import { HOST } from process.env
+
 export function getCourses(){
     return async function(dispatch){
         try {
-            const response = (await axios.get(HOST+"/courses"))
+            console.log("Entra action");
+            const response = (await axios.get("http://localhost:3001"+"/courses")).data
+
             dispatch({
                 type: GET_COURSES,
                 payload:response

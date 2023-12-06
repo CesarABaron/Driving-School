@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import Courses from "./Courses";
+import ErrorBoundary from "../ErrorBoundary"
+import { useSelector, useDispatch } from 'react-redux';
+import { getCourses } from '../../Redux/Actions/coursesActions';
 
 const OurServices = () => {
+ /*  const courses = useSelector((state) => state.courses);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      alert("ENTRA AL USEEFFECT")
+      dispatch(getCourses());
+  }, [courses]); */
   return (
     <div
       id="our-services"
@@ -20,11 +31,13 @@ const OurServices = () => {
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" style={{ height: "500px" }} id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="tab-pane fade show active" style={{ /* height: "500px" */ }} id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
           {/* CURSOS */}
-
+          <ErrorBoundary>
+            <Courses/>
+          </ErrorBoundary>
         </div>
-        <div class="tab-pane fade" style={{ height: "500px" }} id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <div class="tab-pane fade" style={{ height: "500px" }} id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
           {/* TRAMITES */}
         </div>
       </div>
