@@ -13,6 +13,7 @@ const Home = () => {
   useEffect(()=>{
       dispatch(getCourses())
       dispatch(getProcedures())
+      dispatch(getFAQS())
   },[])
   return (
     <div>
