@@ -1,11 +1,13 @@
 import{
     GET_COURSES,
+    GET_FAQS,
     GET_PROCEDURES
 } from "./actionTypes"
 
 const initialState = {
     courses:[],
-    procedures:[]
+    procedures:[],
+    faqs:[]
 }
 
 export default function rootReducer(state = initialState, action){
@@ -19,6 +21,11 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 procedures:action.payload
+            }
+        case GET_FAQS:
+            return{
+                ...state,
+                faqs:action.payload
             }
         default:
             return { ...state };

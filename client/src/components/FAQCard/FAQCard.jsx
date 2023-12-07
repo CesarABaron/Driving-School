@@ -1,24 +1,24 @@
 import React from 'react'
 
-const FAQCard = ({question, answer}) => {
+const FAQCard = ({id ,question, answer}) => {
   return (
-        <div className="accordion-item">
-            <h2 className="accordion-header" id="headingOne">
+        <div className="accordion-item no-outline">
+            <h2 className="accordion-header no-outline" id={"heading"+id}>
             <p
                 className="accordion-button collapsed no-outline"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
+                data-bs-target={"#collapseOne"+id}
                 aria-expanded="true"
-                aria-controls="collapseOne"
+                aria-controls={"collapseOne"+id}
             >
                 {question}
             </p>
             </h2>
             <div
-            id="collapseOne"
-            className="accordion-collapse collapse"
-            aria-labelledby="headingOne"
+            id={"collapseOne"+id}
+            className="accordion-collapse collapse no-outline"
+            aria-labelledby={"heading"+id}
             data-bs-parent="#faqAccordion"
             >
             <div className="accordion-body">
