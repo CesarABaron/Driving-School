@@ -115,6 +115,19 @@ const NavBar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li>
+                  <RouterLink
+                    to="/Inscripcion"
+                    className="dropdown-item"
+                    /* data-bs-toggle="collapse" (SI SE DESCOMENTA NO FUNCIONAN LOS LINKS)*/
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    Inscripciones
+                  </RouterLink>
+                </li>
+                <li>
                   <RouterLink className="dropdown-item" to="about-us">
                     Sobre nosotros
                   </RouterLink>
@@ -144,18 +157,23 @@ const NavBar = () => {
             </li>
           </ul>
           <form className="d-flex" role="search">
-              <button
-                className="btn btn-outline-success"
-                type="submit"
-                onClick={() => window.open("https://api.whatsapp.com/send?phone=3142219525", "_blank")}
-                /* data-bs-toggle="collapse" */
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                Contactenos
-              </button>
+            <button
+              className="btn btn-outline-success"
+              type="submit"
+              onClick={() =>
+                window.open(
+                  "https://api.whatsapp.com/send?phone=3142219525",
+                  "_blank"
+                )
+              }
+              /* data-bs-toggle="collapse" */
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              Contactenos
+            </button>
           </form>
         </div>
       </div>
