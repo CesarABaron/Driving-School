@@ -58,7 +58,7 @@ const NavBar = () => {
                   style={{ cursor: "pointer" }}
                   className="nav-link active cursor-pointer"
                   aria-current="page"
-                  /* data-bs-toggle="collapse" */
+                  /* data-bs-toggle="collapse" (SI SE DESCOMENTA NO FUNCIONAN LOS LINKS)*/
                   data-bs-target="#navbarSupportedContent"
                   aria-controls="navbarSupportedContent"
                   aria-expanded="false"
@@ -131,7 +131,7 @@ const NavBar = () => {
                   <RouterLink
                     to="/faq"
                     className="dropdown-item"
-                    data-bs-toggle="collapse"
+                    /* data-bs-toggle="collapse" (SI SE DESCOMENTA NO FUNCIONAN LOS LINKS)*/
                     data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
                     aria-expanded="false"
