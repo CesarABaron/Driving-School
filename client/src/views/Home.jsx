@@ -5,12 +5,14 @@ import Location from "../components/Location/Location"
 import React, { useEffect } from 'react'
 import { useDispatch } from "react-redux"
 import { getCourses } from "../Redux/Actions/coursesActions"
+import { getProcedures } from "../Redux/Actions/proceduresActions"
 
 const Home = () => {
 
   const dispatch = useDispatch()
   useEffect(()=>{
       dispatch(getCourses())
+      dispatch(getProcedures())
   },[])
   return (
     <div>

@@ -1,14 +1,13 @@
 import axios from "axios"
-import { HOST, GET_COURSES } from "../actionTypes"
+import { HOST, GET_PROCEDURES } from "../actionTypes"
 
-export function getCourses(){
+export function getProcedures(){
     return async function(dispatch){
         try {
-            console.log("Entra action");
-            const response = (await axios.get(HOST+"/courses")).data
+            const response = (await axios.get(HOST+"/procedures")).data
 
             dispatch({
-                type: GET_COURSES,
+                type: GET_PROCEDURES,
                 payload:response
             })
         } catch (error) {

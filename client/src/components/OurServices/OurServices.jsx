@@ -5,6 +5,7 @@ import Courses from "./Courses";
 import ErrorBoundary from "../ErrorBoundary"
 import { useSelector, useDispatch } from 'react-redux';
 import { getCourses } from '../../Redux/Actions/coursesActions';
+import Procedures from "./Procedures";
 
 const OurServices = () => {
  /*  const courses = useSelector((state) => state.courses);
@@ -39,6 +40,9 @@ const OurServices = () => {
         </div>
         <div class="tab-pane fade" style={{ height: "500px" }} id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
           {/* TRAMITES */}
+          <ErrorBoundary>
+            <Procedures/>
+          </ErrorBoundary>
         </div>
       </div>
       <br />
