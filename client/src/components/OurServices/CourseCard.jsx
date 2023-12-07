@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CourseCard = (props) => {
-  const {courseName, image, originalPrice, fridayPrice, includes, requirements, payment, theoricSchedule, practiceSchedule} = props
+  const {courseName, image, description, originalPrice, fridayPrice, includes, requirements, payment, theoricSchedule, practiceSchedule} = props
   return (
     <div className="card mx-2 my-5 " style={{ width: "18em" }}>
     <img
@@ -12,8 +12,7 @@ const CourseCard = (props) => {
     <div className="card-body">
       <h5 className="card-title ">{courseName}</h5>
       <p className="card-text">
-        Some quick example text to build on the card title and make up the
-        bulk of the card's content.
+       {description}
       </p>
       <a href="#" className="btn btn-primary">
         Ver más
