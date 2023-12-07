@@ -6,6 +6,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from "react-redux"
 import { getCourses } from "../Redux/Actions/coursesActions"
 import { getProcedures } from "../Redux/Actions/proceduresActions"
+import { getFAQS } from "../Redux/Actions/faqsActions"
 
 const Home = () => {
 
