@@ -3,8 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Courses from "./Courses";
 import ErrorBoundary from "../ErrorBoundary"
-import { useSelector, useDispatch } from 'react-redux';
-import { getCourses } from '../../Redux/Actions/coursesActions';
 import Procedures from "./Procedures";
 
 const OurServices = () => {
