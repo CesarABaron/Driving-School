@@ -9,11 +9,11 @@ const Location = () => {
       </h3>
       <div className="d-flex justify-content-center mb-5">
         <div
-          className="col-6 bg-primary p-5 d-flex flex-column justify-content-center  "
-          style={{ height: "40em" }}
+          className="	col-8 col-xxl-7   col-sm-8  bg-primary p-3 p-sm-5  d-flex flex-column justify-content-center  "
+          style={{ height: "35em" }}
         >
           <h1>Academia Automovilismo</h1>
-          <h1 className="mb-5">El Poblado</h1>
+          <h1 className="">El Poblado</h1>
           <div className="d-flex mb-3">
             <div className="col-2">ICON</div>
             <div className="col-11">Cl. 9 #43b-46, El Poblado, Medellín</div>
@@ -30,11 +30,8 @@ const Location = () => {
             <button className="btn btn-primary mt-3">Ir a Google Maps</button>
           </Link>
         </div>
-        <div className="col-4 bg-black">
-          <img
-            style={{ height: "45vh" }}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPf9QUxq_7-T282QDx_8JSVK7gkUhIrs7bNbUoAyIoTg&s"
-          ></img>
+        <div className="col-5 bg-black d-none d-md-block">
+          <img style={{ height: "35vh" }}></img>
         </div>
       </div>
     </div>
