@@ -4,6 +4,7 @@ const { getAllCoursesController } = require("../Controllers/Courses/getAllCourse
 const { updateCoursesController } = require("../Controllers/Courses/updateCoursesController")
 const { deleteCourseController } = require("../Controllers/Courses/deleteCourseController")
 const { getCourseByIdController } = require("../Controllers/Courses/getCourseByIdController")
+const { createBulkCoursesController } = require("../Controllers/Courses/createBulkCoursesController")
 
 
 const createCourseHandler = async (req, res) =>{
@@ -11,6 +12,16 @@ const createCourseHandler = async (req, res) =>{
         const newCourse = await createCoursesController(req.body)
         if(newCourse) return res.status(200).json(newCourse)
         return res.status(400).json({error: "Course with the same name already exists."})
+    } catch (error) {
+        res.status(500).json({error: error.message})
+    }
+}
+
+const createBulkCourseHandler = async (req, res) =>{
+    try {
+        const newCourse = await createBulkCoursesController(req.body)
+        if(newCourse) return res.status(200).json(newCourse)
+        return res.status(400).json({error: "Couldn't create the course chunk"})
     } catch (error) {
         res.status(500).json({error: error.message})
     }
@@ -59,6 +70,7 @@ const deleteCourseHandler = async (req, res) =>{
 
 module.exports={
     createCourseHandler,
+    createBulkCourseHandler,
     getAllCoursesHandler,
     getCourseByIdHandler,
     updateCoursesHandler,
