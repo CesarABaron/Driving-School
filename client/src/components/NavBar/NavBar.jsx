@@ -144,11 +144,11 @@ const NavBar = () => {
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <Link to="https://api.whatsapp.com/send?phone=3142219525">
               <button
                 className="btn btn-outline-success"
                 type="submit"
-                data-bs-toggle="collapse"
+                onClick={() => window.open("https://api.whatsapp.com/send?phone=3142219525", "_blank")}
+                /* data-bs-toggle="collapse" */
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
@@ -156,7 +156,6 @@ const NavBar = () => {
               >
                 Contactenos
               </button>
-            </Link>
           </form>
         </div>
       </div>
